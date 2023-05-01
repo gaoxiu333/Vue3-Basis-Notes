@@ -1,9 +1,9 @@
 # vue3-learning
 
-记录 Vue3 基础API的实验代码
+Vue3 基础API的实验代码
 ## 自定义Vite配置
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+ [查看配置](https://vitejs.dev/config/).
 
 ## 安装依赖
 
@@ -11,7 +11,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### 开发模式启动
+### 开发模式
 
 ```sh
 npm run dev
