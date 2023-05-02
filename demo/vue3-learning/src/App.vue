@@ -7,8 +7,11 @@
   </header>
   <main>
     <p class="desc">子组件区域</p>
-    <component :is="currentComponent" v-model:val="modelVal" @change="onChildChange" :animal="currentVal.animal"
-      ref="childRef"></component>
+    <!-- 缓存 动态组件 -->
+    <KeepAlive :include="['可以是正则匹配，可以是字符串，可以是数组']" :exclude="'和include参数类型一样'" :max="1">
+      <component :is="currentComponent" v-model:val="modelVal" @change="onChildChange" :animal="currentVal.animal"
+        ref="childRef"></component>
+    </KeepAlive>
   </main>
   <hr />
 
