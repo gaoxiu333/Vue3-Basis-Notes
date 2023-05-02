@@ -7,6 +7,7 @@
 </template>
 <script  lang="ts">
 export default {
+    inheritAttrs:false,
     data() {
         return {
             optionsCount: 0,

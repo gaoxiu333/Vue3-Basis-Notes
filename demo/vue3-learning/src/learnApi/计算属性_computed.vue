@@ -10,6 +10,11 @@
 
     </main>
 </template>
+<script lang="ts">
+export default {
+    inheritAttrs: false,
+}
+</script>
 <script setup lang="ts">
 import { computed, isReadonly, ref } from 'vue';
 

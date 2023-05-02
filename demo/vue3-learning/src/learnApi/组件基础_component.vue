@@ -36,6 +36,7 @@ import { h } from "vue";
 import Child2 from './components/Child2.vue'
 export default {
     name: 'baseComponents',
+    inheritAttrs:false,
     components:{ // 组件注册
         Child2,
         'Child3':{

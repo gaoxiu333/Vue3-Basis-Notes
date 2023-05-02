@@ -12,6 +12,11 @@
 
     </main>
 </template>
+<script lang="ts">
+export default {
+    inheritAttrs: false,
+}
+</script>
 <script setup lang="ts">
 import { customRef, getCurrentScope, isProxy, isReactive, isReadonly, isRef, onMounted, reactive, ref, toRaw, toRef, toRefs, unref } from 'vue';
 // 定义响应式数据

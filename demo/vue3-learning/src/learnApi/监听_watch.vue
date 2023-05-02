@@ -8,6 +8,11 @@
         <button @click="stopWatchScop">stop scope watch</button>
     </main>
 </template>
+<script lang="ts">
+export default {
+    inheritAttrs: false,
+}
+</script>
 <script setup lang="ts">
 import { useScopeDispose } from '@/hooks/useBase';
 import { effectScope, getCurrentScope, onScopeDispose, onUnmounted, reactive, ref, toRaw, watch, watchEffect } from 'vue';

@@ -8,6 +8,7 @@
 import { onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated } from 'vue'
 
 export default {
+    inheritAttrs:false,
     data() {
         return {
             count: 0,

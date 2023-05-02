@@ -1,7 +1,7 @@
 <template>
     <h1>组合式API</h1>
     <main>
-        <p><strong v-my-directive>count: </strong>{{ count }}</p>
+        <p><strong>count: </strong>{{ count }}</p>
         <p><strong>optionsCount: </strong>{{ optionsCount }}</p>
         <button @click="increment">count ++</button>
     </main>
@@ -9,6 +9,7 @@
 <script  lang="ts">
 import { defineComponent, getCurrentInstance, onMounted, reactive, ref } from 'vue';
 export default defineComponent({
+    inheritAttrs:false,
     data() {
         return {
             optionsCount: 0,
