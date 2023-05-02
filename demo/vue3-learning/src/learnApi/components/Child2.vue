@@ -1,4 +1,8 @@
 <template>
-    <p>我来自子组件，我是child2</p>
+    <p>我是子组件，我是child2</p>
 </template>
-<script setup></script>
+<script lang="ts">
+export default{
+    name:'Child2',
+}
+</script>

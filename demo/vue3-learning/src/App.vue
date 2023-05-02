@@ -35,6 +35,7 @@ import LifecycleHooks from './learnApi/生命周期_lifecycle.vue';
 import OptionsAPI from './learnApi/选项式_optionsAPI.vue';
 import CompositionAPI from './learnApi/组合式_compositionAPI.vue';
 import baseComponents from './learnApi/组件基础_component.vue'
+import 内置组件Vue from './learnApi/内置组件.vue';
 
 const lists: any = [
   {
@@ -68,6 +69,10 @@ const lists: any = [
   {
     name: '组件基础',
     component: baseComponents
+  },
+  {
+    name: '内置组件',
+    component: 内置组件Vue
   }
 ]
 

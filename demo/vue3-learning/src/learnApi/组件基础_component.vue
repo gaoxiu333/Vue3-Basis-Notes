@@ -1,6 +1,7 @@
 <template>
     <div>
         <div>
+            <!-- 全局组件 -->
             <CatComponent>
                 <span>🍎</span>
                 <!-- 具名插槽及作用域 -->
@@ -16,11 +17,11 @@
             <Child2 />
         </div>
         <div>
-            <TestVue />
+            <Child3 />
         </div>
         <div>
             <!-- 无渲染组件只传递数据，没有渲染的元素，vue 推荐使用 组合式函数实现 -->
-            无渲染组件：
+            无渲染组件：这个组件似乎没什么用
             <MouseTracker v-slot="{ x, y }">
                 鼠标坐标：{{ x }},{{ y }}
             </MouseTracker>
@@ -35,14 +36,12 @@ import { h } from "vue";
 import Child2 from './components/Child2.vue'
 export default {
     name: 'baseComponents',
-    // inheritAttrs
     components:{ // 组件注册
         Child2,
-        'TestVue':{
+        'Child3':{
             setup(){},
-            // template:`<p>我来自本地注册的组件</p>`
             render(){
-                return h('p','我是来自本地注册的组件')
+                return h('p','我是来自本地注册的组件Child3')
             }
         }
     }

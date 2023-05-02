@@ -1,4 +1,5 @@
 <template>
-    <p>我来自子组件，我是child1</p>
+    <p>我是子组件，我是child1</p>
 </template>
-<script setup></script>
+<script setup lang="ts">
+</script>
