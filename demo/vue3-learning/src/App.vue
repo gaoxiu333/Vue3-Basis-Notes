@@ -7,7 +7,8 @@
   </header>
   <main>
     <p class="desc">子组件区域</p>
-    <component :is="currentComponent" @change="onChildChange" :animal="currentVal.animal" ref="childRef"></component>
+    <component :is="currentComponent" v-model:val="modelVal" @change="onChildChange" :animal="currentVal.animal"
+      ref="childRef"></component>
   </main>
   <hr />
 
@@ -17,6 +18,8 @@
       查看子组件实例： <button @click="logChild">click</button>
     </p>
     <p>从子组件得到一个： {{ childVal }}</p>
+    <p>v-model：{{ modelVal }}</p>
+    <input :value="modelVal" @input="handleInput($event)">
   </main>
   <footer>
   </footer>
@@ -31,6 +34,7 @@ import WatchVue from './learnApi/监听_watch.vue'
 import LifecycleHooks from './learnApi/生命周期_lifecycle.vue';
 import OptionsAPI from './learnApi/选项式_optionsAPI.vue';
 import CompositionAPI from './learnApi/组合式_compositionAPI.vue';
+import baseComponents from './learnApi/组件基础_component.vue'
 
 const lists: any = [
   {
@@ -60,16 +64,20 @@ const lists: any = [
   {
     name: '选项式API',
     component: OptionsAPI
+  },
+  {
+    name: '组件基础',
+    component: baseComponents
   }
 ]
 
 const currentKey: any = ref(0)
-const childRef = ref(null)
-const childVal = ref(null)
-const currentVal = reactive({
+const childRef = ref(null) // 组件 ref
+const childVal = ref(null) // 测试 emit 
+const currentVal = reactive({ // 测试 props
   animal: '🐈'
 })
-
+const modelVal = ref('') // 测试 v-model
 // 注入
 provide('parentProvide', '来自父组件的：😿')
 const selectNav = (key: any) => {
@@ -85,6 +93,9 @@ const logChild = () => {
 }
 const onChildChange = (event: any) => {
   childVal.value = event
+}
+const handleInput = (event: any) => {
+  modelVal.value = event.target.value
 }
 </script>
 <style>
